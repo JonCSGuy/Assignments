@@ -61,7 +61,7 @@ const formatTime = (time) => {
     // use setInterval
     start(){
         this.setState({
-            curretMilliseconds: this.state.userInput
+            currentMilliseconds: this.state.userInput
         });
         
     }
