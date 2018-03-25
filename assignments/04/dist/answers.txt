@@ -1,0 +1,43 @@
+1. If you mean a specific type the url would be pokeapi.co/api/v2/type/2 or what ever 
+number. this will show a specific pokemon type. if you want to show a specific pokemon then type
+pokeapi.co/api/v2/pokemon/2. this will show ivesaur or that number pokemon in the
+pokedex.
+
+2. 
+
+Attribute: url
+Description: the url to find this pokemon or type or what eveer your looking for using this api
+Data Type: string
+
+Attribute: slot 
+Description: this is a property for the abilities object so it means how many attacks
+you can have for this pokemon.
+Data Type: integer
+
+Attribute: is_hidden 
+Description: How am i suppose to know this. I haven't played the game.
+Data Type: boolean
+
+3. Here is the url for the sprite i downloaded. Its bulbasaur.
+url for sprite: https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png
+Picture for the sprite: How am i suppose to paste the picture on this text file. Instead I just pasted it on the dist folder.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

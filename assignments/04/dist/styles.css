@@ -1,0 +1,41 @@
+.example-style {
+  background-color: black;
+  color: white;
+}
+.background{
+  text-align: center;
+  background-image: url('pokedex.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body{
+  text-align: center;
+  background-image: url('pokemon.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.inputBox:hover {
+  border: 2px solid black;
+  transition: 3s;
+}
+
+.inputBox:active{
+  border: 2px solid black;
+}
+
+.inputBox {
+
+  transition: 3s;
+}
+
+.searchBox:hover {
+  background-color: green;
+  transition: 2s;
+}
+
+.searchBox:hover {
+
+  transition: 2s;
+}
