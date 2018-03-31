@@ -19,46 +19,56 @@ class BasicInput extends React.Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.search = this.search.bind(this);
-    this.getAjaxPromise = this.getAjaxPromise.bind(this);
+    
 
     this.state = {
       userInput: '',
-      data: ''
+      name: '',
+      weight: '',
+      height: '',
+      picture: ''
+
     };
   }
   handleChange(e) {
     this.setState({userInput: e.target.value});
   }
 
-  getAjaxPromise(url) {
-    return new Promise(resolve => {
-      var httpRequest = new XMLHttpRequest();
-      httpRequest.onreadystatechange = () => {
-        if(httpRequest.readyState === XMLHttpRequest.DONE) {
-          resolve(httpRequest.responseText);
-        }
-      };
-      httpRequest.open('GET', url);
-      httpRequest.send();
-    });
-  }
+ 
 
   search(){
     const https = 'https://pokeapi.co/api/v2/pokemon/';
     const closingUrl = '/';
     let url = https + this.state.userInput + closingUrl;
 
-    this.setState({data: this.getAjaxPromise(url).then(function(res){
-     
-     
-      let content = JSON.stringify(res); //i have to use .map()
-      return content; 
-    })
     
     
-    });
-    console.log(this.state.data);
-  }
+    let name;
+    let weight; 
+    let height; 
+    let picture;
+    console.log('before')
+      getAjaxPromise(url)
+      .then(JSON.parse)
+      .then((data) => {
+       
+         name = data.name;
+         weight = data.weight;
+         height = data.height;
+         picture = data.sprites.front_default;
+        
+         this.setState({name: name});
+         this.setState({weight: weight});
+         this.setState({height: height});
+         this.setState({picture: picture});
+         console.log(this.state.name);
+      });
+      
+      
+      
+    
+    }
+  
 
   render() {
     return (
@@ -68,12 +78,16 @@ class BasicInput extends React.Component {
           </p>
           <input class="inputBox" onChange={this.handleChange}/><button class="searchBox" onClick={this.search} type="submit">search</button>
           <p>
-            {this.state.data}  
+            Name:{this.state.name}
+            weight:{this.state.weight} 
+            height:{this.state.height} 
+            picture:{this.state.picture}   
           </p>
       </div>
     ); 
   }
 }
+
 
 /*
  * This is a template to get you started on Assignment #4. 
