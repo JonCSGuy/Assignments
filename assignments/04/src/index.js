@@ -26,7 +26,8 @@ class BasicInput extends React.Component {
       name: '',
       weight: '',
       height: '',
-      picture: ''
+      picture: '',
+      base_experience: ''
 
     };
   }
@@ -47,6 +48,8 @@ class BasicInput extends React.Component {
     let weight; 
     let height; 
     let picture;
+    let base_experience;
+
     console.log('before')
       getAjaxPromise(url)
       .then(JSON.parse)
@@ -55,12 +58,14 @@ class BasicInput extends React.Component {
          name = data.name;
          weight = data.weight;
          height = data.height;
+         base_experience = data.base_experience;
          picture = data.sprites.front_default;
         
          this.setState({name: name});
          this.setState({weight: weight});
          this.setState({height: height});
          this.setState({picture: picture});
+         this.setState({base_experience: base_experience});
          console.log(this.state.name);
       });
       
@@ -77,12 +82,13 @@ class BasicInput extends React.Component {
             Please search for a pokemon
           </p>
           <input class="inputBox" onChange={this.handleChange}/><button class="searchBox" onClick={this.search} type="submit">search</button>
-          <p>
-            Name:{this.state.name}
-            weight:{this.state.weight} 
-            height:{this.state.height} 
-            picture:{this.state.picture}   
-          </p>
+          
+          <p>Name:{this.state.name}</p><br/>
+          <p>weight:{this.state.weight}</p><br/>
+          <p>height:{this.state.height}</p><br/>
+          <p>base_experience:{this.state.base_experience}</p><br/>
+          <img src={this.state.picture}/><br/>
+          
       </div>
     ); 
   }
