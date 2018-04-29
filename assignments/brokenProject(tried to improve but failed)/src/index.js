@@ -46,6 +46,7 @@ class BasicInput extends React.Component {
     this.getKey = this.getKey.bind(this);
     PAO2 = PAO2.bind(this);
     PBO3 = PBO3.bind(this);
+    StartPoint = StartPoint.bind(this);
 
     this.state = {
      key: ""
@@ -81,7 +82,7 @@ class BasicInput extends React.Component {
 ReactDOM.render(
 
 
- <App/>,
+ <BasicInput/>,
 
 
   document.getElementById('root')
